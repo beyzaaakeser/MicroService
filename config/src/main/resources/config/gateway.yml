@@ -1,0 +1,26 @@
+eureka:
+  client: # !!! bunun bir client oldugunu soyluyorum
+    serviceUrl: #!!! bu clientin server i hakkinda bilgi verecegim
+      defaultZone: http://localhost:8097/eureka
+# !!! yukarda discovery server ( register olacagi) portunu soyluyoruz
+
+  # !!! butun requestler once gateway e gelecek daha sonra ilgili service
+  # kismina gidecegi icin, gateway'e butun servisleri tanitiyoruz:
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: reservationModule
+          uri: lb://reservation-service
+          predicates:
+            - Path=/reservation/**
+
+        - id: carModule
+          uri: lb://car-service
+          predicates:
+            - Path=/car/**
+
+        - id: logModule
+          uri: lb://log-service
+          predicates:
+            - Path=/log/**

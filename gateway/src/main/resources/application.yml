@@ -1,0 +1,10 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: gateway
+
+  config:
+    import: optional:configserver:http://localhost:8090
+    #config server a baglanip kendi konsigurasyonunu buradan almasini sagliyortum

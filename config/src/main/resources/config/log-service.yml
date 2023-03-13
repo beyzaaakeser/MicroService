@@ -1,0 +1,9 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8097/eureka
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/logdb

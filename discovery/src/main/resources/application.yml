@@ -1,0 +1,12 @@
+
+server:
+  port: 8097
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false  # kendisi eureka oldugu icin bir yere kaydolmayacak o yuzden 2 yere false yazildi
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

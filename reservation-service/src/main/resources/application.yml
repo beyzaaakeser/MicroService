@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: reservation-service #!!! uygulamamin ismini
+
+  config:
+    import: optional:configserver:http://localhost:8090
+    #!!! config server i nerede oldugunu soyluyorum
